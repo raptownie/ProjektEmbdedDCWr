@@ -1,32 +1,34 @@
-#ifndef _DeviceHeader
-#define _DeviceHeader
-#include "stm32f3xx.h"                  // Device header
-#endif
+#include "main.h"
 
-#include "headers/GPIOInit.h"
-#include "headers/UserSystemInit.h"
-#include "headers/Timers.h"
-
-int main (void){
+ int main (void){
    
    /*** Clock Init ***/
    ClockConfig_HSE_with_PLL(); //72MHz
     
-   /*** GPIOE LEDs Init ***/
-   GPIOE_LED_Init(); // LD3-10 init
-   
-   /*** GPIOA Button PA0 Init ***/
-   GPIOA_BUTTON_Init();
-   
+   /*** GPIOE LEDs Init (LD3-LD10); GPIOA Button PA0 Init ***/   
+   GPIO_Init();
+    
    /*** Sleep Mode config ***/
    StandbyConfig();   
    
-   /*** TIM7 ***/
-   TIM7_config();  
+   /*** Gyroskop config ***/
+   SPI_Config_for_Gyroskop();
    
-   while (PWR->CSR & PWR_CSR_SBF);
+   /*** UART Init ***/
+   UART4_Init_with_DMA_TIM1();
+   
+   /*** TurnOn All Timers ***/
+   TurnOnTimers();
+   
+   while (PWR->CSR & PWR_CSR_SBF);     // czy po standby?
    
    while(1){
+     // Gyroskop_L3GD20_XYZ_Read_Calculate();
+      
+      
+      delay_ms(500);
+
+      
       delay_ms(1000);
       GPIOE->ODR ^= 0xFF00;
       delay_ms(200);
@@ -37,3 +39,5 @@ int main (void){
       
    }
 }
+ 
+

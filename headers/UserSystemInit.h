@@ -1,13 +1,12 @@
-#ifndef _UserSystemInit
-#define _UserSystemInit
+#ifndef UserSystemInitHeader
+#define UserSystemInitHeader
 
-#ifndef _DeviceHeader
+#ifndef DeviceHeader
+#define DeviceHeader
 #include "stm32f3xx.h"                  // Device header
 #endif
 
-#ifndef _Timers
 #include "Timers.h"
-#endif
 
 void ClockConfig_HSE_with_PLL(void);
 void SysTick_Handler(void);

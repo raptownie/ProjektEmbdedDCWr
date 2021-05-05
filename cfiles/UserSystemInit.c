@@ -62,6 +62,7 @@ void StandbyConfig(void){
    PWR->CR |= PWR_CR_PDDS;
    PWR->CR |= PWR_CR_CWUF;
    PWR->CSR |= PWR_CSR_EWUP1;
+   TIM7_config();
 }   
    
    

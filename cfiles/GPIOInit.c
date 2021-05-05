@@ -1,6 +1,10 @@
 #include "../headers/GPIOInit.h"
 
-void GPIOE_LED_Init(void){
+
+static void SwitchMode_Gyro_Accelero (void);
+
+ /*** GPIOE LEDs Init LD3-10***/
+static void GPIOE_LED_Init(void){
    // Enabled clock for GPIOE
    RCC->AHBENR |= RCC_AHBENR_GPIOEEN;
    
@@ -30,7 +34,8 @@ void GPIOE_LED_Init(void){
                   
 }
 
-void GPIOA_BUTTON_Init(void){
+   /*** GPIOA Button PA0 Init ***/
+static void GPIOA_BUTTON_Init(void){
    // Enabled clock for GPIOA
    RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
    
@@ -55,10 +60,43 @@ void GPIOA_BUTTON_Init(void){
    NVIC_EnableIRQ(EXTI0_IRQn);
 }
 
-void EXTI0_IRQHandler(void){ 
+void EXTI0_IRQHandler(void){
+   static uint16_t button_pressed = 0;
+   static uint16_t button_unpressed = 0;
+   static uint16_t debounce_value = 500;
+   static uint8_t wait_for_next_press = 0;
+
+   
    if((EXTI->PR & EXTI_PR_PR0) == EXTI_PR_PR0){
-      GPIOE->ODR ^= 0xF000;
-      EXTI->PR |= EXTI_PR_PR0;
+      //SW eliminacja drgania stykow
+      if (((GPIOA->IDR) & GPIO_IDR_0 ) == GPIO_IDR_0){
+         button_pressed++;
+         button_unpressed = 0;
+         if (button_pressed > debounce_value && wait_for_next_press == 0){
+            GPIOE->ODR ^=0xF000;
+            SwitchMode_Gyro_Accelero();
+            wait_for_next_press = 1;         
+         }             
+      } else{
+         button_unpressed++;
+         button_pressed = 0;
+         if (button_unpressed>debounce_value && wait_for_next_press == 1) {         
+            wait_for_next_press =0;
+            EXTI->PR |= EXTI_PR_PR0;
+         }
+      }  
    }
+}
+
+void GPIO_Init(void){
+   GPIOE_LED_Init();
+   GPIOA_BUTTON_Init();
+}
+
+static void SwitchMode_Gyro_Accelero (void){
+   static uint8_t ModeCounter=0;
+   if ((ModeCounter++)%2){
+      ModeSelect = Gyro;
+   }else ModeSelect = Accelero;
 }
 
