@@ -100,7 +100,8 @@ static void UART4_DMA_TIM1_config(void){
  
    DMA2_Channel3->CCR &= ~DMA_CCR_MSIZE_0;       // memory size 8 bitow
    DMA2_Channel3->CCR &= ~DMA_CCR_MSIZE_1;
-   DMA2_Channel3->CCR &= ~DMA_CCR_PSIZE_0;       // periph size 8 bitów
+   DMA2_Channel3->CCR &= ~DMA_CCR_PSIZE_0; 
+   // periph size 8 bitów
    DMA2_Channel3->CCR &= ~DMA_CCR_PSIZE_1; 
    
    DMA2_Channel3->CCR |= DMA_CCR_MINC;         // Memory inc enabled
@@ -118,17 +119,17 @@ void Send_Gyro_Date_XYZ_UART(void){
 }
 
 void Send_Data_Gyro_Accelero_XYZ_UART(void){
-   if (ModeSelect == Accelero){
-      PrepareDataToSendUART(GyroskopXYZvalues);
-   }else if (ModeSelect == Gyro){
+   if (ModeSelect == Accelero){      
       PrepareDataToSendUART(AcceleroXYZvalues);
+   }else if (ModeSelect == Gyro){      
+      PrepareDataToSendUART(GyroskopXYZvalues);
    }    
 }
 
 static void PrepareDataToSendUART(DataToSendUART_t DataToSend){
       
-     SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"Mode %c \n\r X = %d    \n\rY = %d    \n\rZ = %d     \x1b[A\r\x1b[A\r\x1b[A\r",ModeSelect, DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
-   //SizeOfDataToSendUART4=(uint8_t)sizeof(StringToSendUART);
+     SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"Mode %d \n\r X = %d    \n\rY = %d    \n\rZ = %d     \x1b[A\r\x1b[A\r\x1b[A\r",ModeSelect, DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
+   SizeOfDataToSendUART4=(uint8_t)sizeof(StringToSendUART);
    
    
 }

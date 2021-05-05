@@ -63,7 +63,7 @@ static void GPIOA_BUTTON_Init(void){
 void EXTI0_IRQHandler(void){
    static uint16_t button_pressed = 0;
    static uint16_t button_unpressed = 0;
-   static uint16_t debounce_value = 500;
+   static uint16_t debounce_value = 250;
    static uint8_t wait_for_next_press = 0;
 
    
@@ -73,7 +73,6 @@ void EXTI0_IRQHandler(void){
          button_pressed++;
          button_unpressed = 0;
          if (button_pressed > debounce_value && wait_for_next_press == 0){
-            GPIOE->ODR ^=0xF000;
             SwitchMode_Gyro_Accelero();
             wait_for_next_press = 1;         
          }             

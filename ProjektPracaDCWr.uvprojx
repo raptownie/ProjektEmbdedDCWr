@@ -413,6 +413,16 @@
               <FileType>1</FileType>
               <FilePath>.\cfiles\SPI.c</FilePath>
             </File>
+            <File>
+              <FileName>I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cfiles\I2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>LedControl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cfiles\LedControl.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -449,14 +459,24 @@
               <FilePath>.\headers\SPI.h</FilePath>
             </File>
             <File>
-              <FileName>main.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\main.h</FilePath>
-            </File>
-            <File>
               <FileName>Typedef.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\headers\Typedef.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\headers\I2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\headers\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>LedControl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\headers\LedControl.h</FilePath>
             </File>
           </Files>
         </Group>

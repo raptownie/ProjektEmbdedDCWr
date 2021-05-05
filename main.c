@@ -1,4 +1,4 @@
-#include "main.h"
+#include "headers/main.h"
 
  int main (void){
    
@@ -7,35 +7,38 @@
     
    /*** GPIOE LEDs Init (LD3-LD10); GPIOA Button PA0 Init ***/   
    GPIO_Init();
-    
+       
    /*** Sleep Mode config ***/
    StandbyConfig();   
-   
+       
    /*** Gyroskop config ***/
    SPI_Config_for_Gyroskop();
+    
+    /*** Accelero config ***/
+   I2C_LSM303DLHC_Init();
    
    /*** UART Init ***/
    UART4_Init_with_DMA_TIM1();
-   
+       
    /*** TurnOn All Timers ***/
    TurnOnTimers();
    
+   /*** ShowDisplay Init ***/
+   InitStruct_LedsStatus_t();
+   TIM8_config();
+   
    while (PWR->CSR & PWR_CSR_SBF);     // czy po standby?
+  
    
    while(1){
-     // Gyroskop_L3GD20_XYZ_Read_Calculate();
-      
-      
-      delay_ms(500);
-
-      
+      /*
       delay_ms(1000);
-      GPIOE->ODR ^= 0xFF00;
-      delay_ms(200);
-      GPIOE->ODR ^= 0xFF00;
-      delay_ms(300);
-      GPIOE->ODR ^= 0xFF00;
-      
+      GPIOE->ODR ^= 0xFE00;
+      delay_ms(1000);
+      GPIOE->ODR ^= 0xFE00;
+      delay_ms(1000);
+      GPIOE->ODR ^= 0xFE00;
+      */
       
    }
 }

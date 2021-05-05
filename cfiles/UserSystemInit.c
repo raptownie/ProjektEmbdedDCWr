@@ -63,6 +63,7 @@ void StandbyConfig(void){
    PWR->CR |= PWR_CR_CWUF;
    PWR->CSR |= PWR_CSR_EWUP1;
    TIM7_config();
+   TIM7->CR1 |= TIM_CR1_CEN;                          // Wlaczenie licznika TIM
 }   
    
    
