@@ -19,18 +19,21 @@
    
    /*** UART Init ***/
    UART4_Init_with_DMA_TIM1();
-       
+    
+   /** ShowDisplay Init ***/
+   InitStruct_LedsStatus_t();
+   TIM8_config();
+   
    /*** TurnOn All Timers ***/
    TurnOnTimers();
    
-   /*** ShowDisplay Init ***/
-   InitStruct_LedsStatus_t();
-   TIM8_config();
+  
    
    while (PWR->CSR & PWR_CSR_SBF);     // czy po standby?
   
    
    while(1){
+     // SetLedBlinkOn(&(tLedStatus[1]));
       /*
       delay_ms(1000);
       GPIOE->ODR ^= 0xFE00;

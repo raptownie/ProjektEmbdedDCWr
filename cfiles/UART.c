@@ -127,9 +127,10 @@ void Send_Data_Gyro_Accelero_XYZ_UART(void){
 }
 
 static void PrepareDataToSendUART(DataToSendUART_t DataToSend){
-      
-     SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"Mode %d \n\r X = %d    \n\rY = %d    \n\rZ = %d     \x1b[A\r\x1b[A\r\x1b[A\r",ModeSelect, DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
-   SizeOfDataToSendUART4=(uint8_t)sizeof(StringToSendUART);
+   if(ModeSelect == Accelero) SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"Mode Accelero \n\rX = %d    \n\rY = %d    \n\rZ = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
+   else SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"Mode Magneto \n\rX = %d    \n\rY = %d    \n\rZ = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
+
+   // SizeOfDataToSendUART4=(uint8_t)sizeof(StringToSendUART);
    
    
 }

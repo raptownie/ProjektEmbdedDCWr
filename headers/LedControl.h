@@ -18,5 +18,7 @@ void SetLedOn(LedStatus_t *);
 void SetLedOff(LedStatus_t *);
 void SetLedBlinkOn(LedStatus_t *);
 void SetLedBlinkOff(LedStatus_t *);
+void SetAllLedsBlinkOn(void);
+void SetAllLedsBlinkOff(void);
 
 #endif

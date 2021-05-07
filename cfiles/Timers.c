@@ -1,12 +1,15 @@
 #include "../headers/Timers.h"
 
+
+static bool_t BlinkAfterWakeUp = False;
+
 /*** TIM7 wykorzystuje do wlaczania i wylaczania urzadzenia ***/
 void TIM7_config(void){
    RCC->APB1ENR |= RCC_APB1ENR_TIM7EN;                // podlaczenie zegara pod TIM7
    TIM7->PSC = TIM7_Prescaler;                                // dzielnik ustawiony na 10000 - 72Mhz/10000 = 7200 impulsow na 1s
    TIM7->ARR = TIM7_AutoReloadRegisterValue;                                  // Przerwanie zakladam co 0,1s a wiec co 720 impulsow 
    TIM7->DIER |= TIM_DIER_UIE;                                 // Update interrupt enabled
-   NVIC_SetPriority(TIM7_IRQn,2);   
+   NVIC_SetPriority(TIM7_IRQn,6);   
    NVIC_EnableIRQ(TIM7_IRQn);
 }
 
@@ -16,24 +19,29 @@ void TIM7_IRQHandler(void){
    if (TIM7->SR & TIM_CR1_CEN){
       if (!(PWR->CSR & PWR_CSR_SBF)){         
          if ((GPIOA->IDR & GPIO_IDR_0) == GPIO_IDR_0) {
+            //Gaszacy okrag przy wylaczaniu urzadzenia
             if (StandbyCounter==0) AllLedsOn();
-            tempToLedOffOn = (uint8_t)(NumberOfLeds *StandbyCounter/((TimeToTurnOnOffDevice_ms)/100));
+            tempToLedOffOn = (uint8_t)((NumberOfLeds-1)*StandbyCounter/((TimeToTurnOnOffDevice_ms)/TIM7Toms));
             SetLedOff(&(tLedStatus[tempToLedOffOn]));
-            if((StandbyCounter++)>(TimeToTurnOnOffDevice_ms)/100) GoSleep();         
+            //
+            if((StandbyCounter++)>(TimeToTurnOnOffDevice_ms)/TIM7Toms) GoSleep();         
          }else {
-            if (StandbyCounter>(TimeToTurnOnOffDevice_ms)/(8*100))  AllLedsOff();
+            if (StandbyCounter>(TimeToTurnOnOffDevice_ms)/(8*TIM7Toms))  AllLedsOff();
             StandbyCounter=0;
          }
                      
       }else{
          if ((GPIOA->IDR & GPIO_IDR_0) == GPIO_IDR_0) {
+            //palacy sie okrag podczas zapalania urzadzenia
             if (StandbyCounter==0) AllLedsOff();
-            tempToLedOffOn = (uint8_t)(NumberOfLeds *StandbyCounter/((TimeToTurnOnOffDevice_ms)/100));
-            SetLedOn(&(tLedStatus[tempToLedOffOn]));            
-            if((StandbyCounter++)>(TimeToTurnOnOffDevice_ms/100)){
+            tempToLedOffOn = (uint8_t)((NumberOfLeds-1)*StandbyCounter/((TimeToTurnOnOffDevice_ms)/TIM7Toms));
+            SetLedOn(&(tLedStatus[tempToLedOffOn]));       
+            //
+            if((StandbyCounter++)>(TimeToTurnOnOffDevice_ms/TIM7Toms)){ 
                AllLedsOff();
+               BlinkAfterWakeUp = True;
                PWR->CR |= PWR_CR_CSBF;
-               StandbyCounter=0;
+               StandbyCounter=0;               
             }                        
          }else GoSleep();  
       }                  
@@ -54,6 +62,13 @@ void TIM1_config(void){
    //config kanalu CCR1 - send uart
    TIM1->CCR1 = TIM1_CCR1_value;
    TIM1->DIER |= TIM_DIER_CC1IE;
+   
+  //config kanalu CCR2 - to blink Led After WakeUp
+   TIM1->CCR2 = TIM1_CCR2_value;
+   TIM1->DIER |= TIM_DIER_CC2IE;
+   //config kanalu CCR3 - to blink Led After WakeUp
+   TIM1->CCR3 = TIM1_CCR3_value;
+   TIM1->DIER |= TIM_DIER_CC3IE;
       
    NVIC_SetPriority(TIM1_CC_IRQn,4);                  // ustawienie priorytetu kanalow licznika TIM1
    NVIC_EnableIRQ(TIM1_CC_IRQn); 
@@ -89,6 +104,24 @@ void TIM1_CC_IRQHandler(void){
    if(((TIM1->SR) & TIM_SR_CC1IF) == TIM_SR_CC1IF){            // sprawdzenie czy przerwanie wywolujace funkcje pochodzi od CC1
       Send_Data_Gyro_Accelero_XYZ_UART();
       TIM1-> SR &= ~TIM_SR_CC1IF;                     // Czyszczenie flagi przerwania od CC1
+   }
+   if(((TIM1->SR) & TIM_SR_CC2IF) == TIM_SR_CC2IF){            // sprawdzenie czy przerwanie wywolujace funkcje pochodzi od CC1
+      if(BlinkAfterWakeUp == True){
+         SetAllLedsBlinkOn();
+         BlinkAfterWakeUp = False;
+      }else{
+          BlinkAfterWakeUp = False;  
+      }
+      TIM1-> SR &= ~TIM_SR_CC2IF;                     // Czyszczenie flagi przerwania od CC1
+   }
+   if(((TIM1->SR) & TIM_SR_CC3IF) == TIM_SR_CC3IF){            // sprawdzenie czy przerwanie wywolujace funkcje pochodzi od CC1
+      if(BlinkAfterWakeUp == True){
+         SetAllLedsBlinkOn();
+         BlinkAfterWakeUp = False;
+      }else{
+          BlinkAfterWakeUp = False;  
+      }
+      TIM1-> SR &= ~TIM_SR_CC3IF;                     // Czyszczenie flagi przerwania od CC1
    }
 }
 

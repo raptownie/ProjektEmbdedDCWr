@@ -1,12 +1,13 @@
 #include "../headers/LedControl.h"
 
 /*       
-                    [5] LD10(PE13)
-          [4] LD9(PE12)           [6] LD8(PE14)
- [3] LD7(PE11)                             [7] LD6(PE15)
-          [2] LD5(PE10)           [0] LD4(PE8)
-                    [1] LD3(PE9)
+                    [5] LD10(PE13) N
+          [4] LD9(PE12) NW          [6] LD8(PE14) NE
+ [3] LD7(PE11) W                             [7] LD6(PE15) E
+          [2] LD5(PE10) SW          [0] LD4(PE8) SE
+                    [1] LD3(PE9) S
 */
+
 
 
 
@@ -22,7 +23,7 @@ void DisplayShow (void){
          GPIOE->ODR |= (uint32_t)(0x1 << (i+8));
       }else {
          GPIOE->ODR &= ~(uint32_t)(0x1 << (i+8));
-      }           
+      }      
    }
 }
 
@@ -66,6 +67,18 @@ void SetLedBlinkOn(LedStatus_t *Led){
 
 void SetLedBlinkOff(LedStatus_t *Led){
    Led->blink = False;   
+}
+
+void SetAllLedsBlinkOn(void){
+   for (int i=0; i<NumberOfLeds; i++){
+      tLedStatus[i].blink=True;
+   } 
+}
+
+void SetAllLedsBlinkOff(void){
+   for (int i=0; i<NumberOfLeds; i++){
+      tLedStatus[i].blink=False;
+   } 
 }
 
 
