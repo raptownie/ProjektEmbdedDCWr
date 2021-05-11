@@ -1,8 +1,6 @@
 #include "../headers/GPIOInit.h"
 
 
-static void SwitchMode_Gyro_Accelero (void);
-
  /*** GPIOE LEDs Init LD3-10***/
 static void GPIOE_LED_Init(void){
    // Enabled clock for GPIOE
@@ -21,10 +19,11 @@ static void GPIOE_LED_Init(void){
                   | ~GPIO_OTYPER_OT_11 | ~GPIO_OTYPER_OT_12 | ~GPIO_OTYPER_OT_13
                   | ~GPIO_OTYPER_OT_14 | ~GPIO_OTYPER_OT_15);
    
-   //Set Low-speed (OSPEEDER x0)
-   GPIOE->OSPEEDR &= (~GPIO_OSPEEDER_OSPEEDR8_0 | ~GPIO_OSPEEDER_OSPEEDR9_0 | ~GPIO_OSPEEDER_OSPEEDR10_0
-                  | ~GPIO_OSPEEDER_OSPEEDR11_0 | ~GPIO_OSPEEDER_OSPEEDR12_0 | ~GPIO_OSPEEDER_OSPEEDR13_0
-                  | ~GPIO_OSPEEDER_OSPEEDR14_0 | ~GPIO_OSPEEDER_OSPEEDR15_0);
+   //Set High speed (OSPEEDER 11)
+   GPIOE->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR8_0 | GPIO_OSPEEDER_OSPEEDR8_1 | GPIO_OSPEEDER_OSPEEDR9_0 | GPIO_OSPEEDER_OSPEEDR9_1
+                  | GPIO_OSPEEDER_OSPEEDR10_0 | GPIO_OSPEEDER_OSPEEDR10_1 | GPIO_OSPEEDER_OSPEEDR11_0 | GPIO_OSPEEDER_OSPEEDR11_1
+                  | GPIO_OSPEEDER_OSPEEDR12_0 | GPIO_OSPEEDER_OSPEEDR12_1 | GPIO_OSPEEDER_OSPEEDR13_0 | GPIO_OSPEEDER_OSPEEDR13_1
+                  | GPIO_OSPEEDER_OSPEEDR14_0 | GPIO_OSPEEDER_OSPEEDR14_1 | GPIO_OSPEEDER_OSPEEDR15_0 | GPIO_OSPEEDER_OSPEEDR15_1;
    
    //Set nopullup-nopulldown (PUPDR 00)
    GPIOE->PUPDR &= ( ~GPIO_PUPDR_PUPDR8_0 | ~GPIO_PUPDR_PUPDR8_1 | ~GPIO_PUPDR_PUPDR9_0 | ~GPIO_PUPDR_PUPDR9_1
@@ -63,9 +62,8 @@ static void GPIOA_BUTTON_Init(void){
 void EXTI0_IRQHandler(void){
    static uint16_t button_pressed = 0;
    static uint16_t button_unpressed = 0;
-   static uint16_t debounce_value = 250;
+   static uint16_t debounce_value = 10;
    static uint8_t wait_for_next_press = 0;
-
    
    if((EXTI->PR & EXTI_PR_PR0) == EXTI_PR_PR0){
       //SW eliminacja drgania stykow
@@ -73,8 +71,9 @@ void EXTI0_IRQHandler(void){
          button_pressed++;
          button_unpressed = 0;
          if (button_pressed > debounce_value && wait_for_next_press == 0){
-            SwitchMode_Gyro_Accelero();
-            wait_for_next_press = 1;         
+            if(!CheckButtonState(ButtonPressedLongerToGoStandby)) ChangeButtonState(JustPressed);
+            wait_for_next_press = 1;
+            //EXTI->PR |= EXTI_PR_PR0;
          }             
       } else{
          button_unpressed++;
@@ -92,10 +91,4 @@ void GPIO_Init(void){
    GPIOA_BUTTON_Init();
 }
 
-static void SwitchMode_Gyro_Accelero (void){
-   static uint8_t ModeCounter=0;
-   if ((ModeCounter++)%2){
-      ModeSelect = Gyro;
-   }else ModeSelect = Accelero;
-}
 

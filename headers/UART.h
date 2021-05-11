@@ -12,7 +12,7 @@
 void UART4_Init_with_DMA_TIM1(void);
 void Send_Gyro_Date_XYZ_UART(void);
 void Send_Data_Gyro_Accelero_XYZ_UART(void);
-
+void DMAHandleUART (void);
 
 
 

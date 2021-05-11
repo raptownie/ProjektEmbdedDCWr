@@ -1,5 +1,5 @@
-#ifndef TimersHeader
-#define TimersHeader
+#ifndef TIMERSHeader
+#define TIMERSHeader
 
 #ifndef DeviceHeader
 #define DeviceHeader
@@ -13,6 +13,7 @@
 #include "Typedef.h"
 #include "I2C.h"
 #include "LedControl.h"
+#include "ProjectPerform.h"
 #include <string.h>
 
 void TIM7_config(void);

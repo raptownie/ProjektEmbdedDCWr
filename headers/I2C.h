@@ -1,5 +1,5 @@
-#ifndef I2C
-#define I2C
+#ifndef I2CHeader
+#define I2CHeader
 
 #ifndef DeviceHeader
 #define DeviceHeader

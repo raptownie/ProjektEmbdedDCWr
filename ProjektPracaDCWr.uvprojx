@@ -423,6 +423,11 @@
               <FileType>1</FileType>
               <FilePath>.\cfiles\LedControl.c</FilePath>
             </File>
+            <File>
+              <FileName>ProjectPerform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cfiles\ProjectPerform.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -477,6 +482,11 @@
               <FileName>LedControl.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\headers\LedControl.h</FilePath>
+            </File>
+            <File>
+              <FileName>ProjectPerform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\headers\ProjectPerform.h</FilePath>
             </File>
           </Files>
         </Group>

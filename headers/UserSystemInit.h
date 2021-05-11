@@ -1,5 +1,5 @@
-#ifndef UserSystemInitHeader
-#define UserSystemInitHeader
+#ifndef USERSYSTEMINITHeader
+#define USERSYSTEMINITHeader
 
 #ifndef DeviceHeader
 #define DeviceHeader
@@ -7,11 +7,14 @@
 #endif
 
 #include "Timers.h"
+#include "GPIOInit.h"
+#include <stdbool.h>
 
 void ClockConfig_HSE_with_PLL(void);
 void SysTick_Handler(void);
 void delay_ms(uint32_t time);
 void StandbyConfig(void);
 void GoSleep (void);
+void SystemSetup (void);
 
 #endif

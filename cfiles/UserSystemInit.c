@@ -2,7 +2,6 @@
 
 static volatile uint32_t timer_ms;
 
-
 void ClockConfig_HSE_with_PLL(void){
 
    RCC->CR |= RCC_CR_HSEBYP;                          
@@ -65,7 +64,32 @@ void StandbyConfig(void){
    TIM7_config();
    TIM7->CR1 |= TIM_CR1_CEN;                          // Wlaczenie licznika TIM
 }   
-   
-   
 
+
+void SystemSetup (void) {
+      /*** Clock Init ***/
+   ClockConfig_HSE_with_PLL(); //72MHz
+    
+   /*** GPIOE LEDs Init (LD3-LD10); GPIOA Button PA0 Init ***/   
+   GPIO_Init();
+       
+   /*** Sleep Mode config ***/
+   StandbyConfig();   
+       
+   /*** Gyroskop config ***/
+   SPI_Config_for_Gyroskop();
+    
+    /*** Accelero config ***/
+   I2C_LSM303DLHC_Init();
+   
+   /*** UART Init ***/
+   UART4_Init_with_DMA_TIM1();
+    
+   /** ShowDisplay Init ***/
+   InitStruct_LedsStatus_tab();
+   TIM8_config();
+   
+   /*** TurnOn All Timers ***/
+   TurnOnTimers();   
+}
 
