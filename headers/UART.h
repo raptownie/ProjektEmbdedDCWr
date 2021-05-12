@@ -14,6 +14,4 @@ void Send_Gyro_Date_XYZ_UART(void);
 void Send_Data_Gyro_Accelero_XYZ_UART(void);
 void DMAHandleUART (void);
 
-
-
 #endif

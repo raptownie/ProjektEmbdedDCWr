@@ -6,6 +6,7 @@
 #include "stm32f3xx.h"                  // Device header
 #endif
 
+#include "Config.h"
 #include <stdbool.h>
 
 typedef struct Gyroskop_Accelero_values {
@@ -31,19 +32,16 @@ typedef enum {
    Off = 0
 }OnOffLed_t;
 
-
-
 typedef enum {
-   LD3_ODR_BIT = GPIO_ODR_9,
-   LD4_ODR_BIT = GPIO_ODR_8,
-   LD5_ODR_BIT = GPIO_ODR_10,
-   LD6_ODR_BIT = GPIO_ODR_15,
-   LD7_ODR_BIT = GPIO_ODR_11,
-   LD8_ODR_BIT = GPIO_ODR_14,
-   LD9_ODR_BIT = GPIO_ODR_12,
-   LD10_ODR_BIT = GPIO_ODR_13    
+   LD3_ODR_BIT = LD3_S_ODR,
+   LD4_ODR_BIT = LD4_SE_ODR,
+   LD5_ODR_BIT = LD5_SW_ODR,
+   LD6_ODR_BIT = LD6_E_ODR,
+   LD7_ODR_BIT = LD7_W_ODR,
+   LD8_ODR_BIT = LD8_NE_ODR,
+   LD9_ODR_BIT = LD9_NW_ODR,
+   LD10_ODR_BIT = LD10_N_ODR   
 }LedPin_ODR_BIT_t;
-
 
 typedef struct LedStatus{
    LedPin_ODR_BIT_t Pin_ODR;

@@ -26,8 +26,8 @@
 #define TIM1_CCR1_value                2000       //co ile impulsow generowane jest przerwanie z kanalu pierwszego TIM1 
 
 //licznik do odswiezania displaya
-#define TIM8_Prescaler                 1499       // 72Mhz/(TIM8_Prescaler+1) - ilosc impulsow na 1s
-#define TIM8_AutoReloadRegisterValue   10     // co ile impulsów TIM1 ma generowac przerwanie
+#define TIM8_Prescaler                 9999       // 72Mhz/(TIM8_Prescaler+1) - ilosc impulsow na 1s
+#define TIM8_AutoReloadRegisterValue   72     // co ile impulsów TIM1 ma generowac przerwanie
 
 #define ClockHZ 72000000
 
@@ -43,18 +43,25 @@
 #define Accelero_CTRL_REG1_A_Value_ToWrite 0x9F
 #define Accelero_CTRL_REG4_A_Value_ToWrite 0x0
 
-
 //LedControl
 #define NumberOfLeds 8
 
-#define LD4_SE       0
-#define LD3_S        1
-#define LD5_SW       2
-#define LD7_W        3
-#define LD9_NW       4
-#define LD10_N       5  
-#define LD8_NE       6
-#define LD6_E        7
+#define LD4_SE             0
+#define LD4_SE_ODR         GPIO_ODR_8
+#define LD3_S              1
+#define LD3_S_ODR          GPIO_ODR_9
+#define LD5_SW             2
+#define LD5_SW_ODR         GPIO_ODR_10
+#define LD7_W              3
+#define LD7_W_ODR          GPIO_ODR_11
+#define LD9_NW             4
+#define LD9_NW_ODR         GPIO_ODR_12
+#define LD10_N             5  
+#define LD10_N_ODR         GPIO_ODR_13 
+#define LD8_NE             6
+#define LD8_NE_ODR         GPIO_ODR_14
+#define LD6_E              7
+#define LD6_E_ODR          GPIO_ODR_15
 
 #define GPIOx_ODR    GPIOE->ODR
 

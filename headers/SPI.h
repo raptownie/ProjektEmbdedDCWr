@@ -17,17 +17,11 @@
 #define L3GD20_Reg_ZL 0x2C
 #define L3GD20_Reg_ZH 0x2D
 
-
-
 void Write_SPI(uint8_t reg, uint8_t data);
 uint8_t Read_SPI(uint8_t reg);
 
 void SPI_Config_for_Gyroskop(void);
 void Gyroskop_L3GD20_XYZ_Read_Calculate(void);
 void L3GD20_Init(void);
-
-
-
-
 
 #endif

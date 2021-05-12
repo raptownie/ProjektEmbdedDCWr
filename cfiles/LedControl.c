@@ -93,20 +93,18 @@ void SetAllLedsBlinkOff(void){
 void GoStandbyModeDeviceLedShow(void){
    AllLedsOn();   
    for (int i=0; i<NumberOfLeds; i++){
-         delay_ms(500);
+         delay_ms(300);
       tLedStatus[i].OnOffStatus = Off;
    }   
-      delay_ms(500);
-      
-   
+      delay_ms(300);
 }
 
 void DeviceAfterWakeUpLedShow(void){
     for (int i=0; i<NumberOfLeds; i++){
-         delay_ms(500);
+         delay_ms(300);
       tLedStatus[i].OnOffStatus = On;
    }   
-      delay_ms(500);
+      delay_ms(300);
       AllLedsOff();
 }
 

@@ -42,19 +42,13 @@ void TIM1_config(void){
    //TIM1->CR1 |= TIM_CR1_CEN;                          // Wlaczenie licznika TIM1
 }
 
-void TIM1_UP_TIM16_IRQHandler(void){    
-   if(((TIM8->SR) & TIM_SR_UIF) == TIM_SR_UIF){      
-      DisplayShow();      
-      TIM8->SR &= ~TIM_SR_UIF;
-   }
+void TIM1_UP_TIM16_IRQHandler(void){   
    if(((TIM1->SR) & TIM_SR_UIF) == TIM_SR_UIF){      
       BlinkLed();      
       DMAHandleUART();      
       TIM1->SR &= ~TIM_SR_UIF;                        // Czyszczenie flagi glownego przerwania TIM1 
-   }
- 
+   } 
 }
-
 
 void TIM1_CC_IRQHandler(void){
    if(((TIM1->SR) & TIM_SR_CC1IF) == TIM_SR_CC1IF){            // sprawdzenie czy przerwanie wywolujace funkcje pochodzi od CC1
@@ -62,8 +56,6 @@ void TIM1_CC_IRQHandler(void){
       TIM1-> SR &= ~TIM_SR_CC1IF;                     // Czyszczenie flagi przerwania od CC1
    }
 }
-
-
 
 //To Read Data from Gyro and Accelero
 void TIM6_config(void){
@@ -91,8 +83,8 @@ void TIM8_config(void){
    TIM8->PSC = TIM8_Prescaler;                        // Ustawienie prescalera timera 72MHz/TIM1_Prescaler = x impulsów na 1s
    TIM8->ARR = TIM8_AutoReloadRegisterValue;          // Ustawienie przerwania licznika glównego - co ile impulsów
    TIM8->DIER |= TIM_DIER_UIE;                        // Update interrupt enabled
-   NVIC_SetPriority(TIM1_UP_TIM16_IRQn,1);            // Ustawienie priorytetu licznika TIM1
-   NVIC_EnableIRQ(TIM1_UP_TIM16_IRQn);                // Wlaczenie przerwania
+   NVIC_SetPriority(TIM8_UP_IRQn,1);            // Ustawienie priorytetu licznika TIM1
+   NVIC_EnableIRQ(TIM8_UP_IRQn);                // Wlaczenie przerwania
 
 }
 
@@ -103,3 +95,14 @@ void TurnOnTimers (void){
    TIM7->CR1 |= TIM_CR1_CEN;                          // Wlaczenie licznika TIM7
    TIM8->CR1 |= TIM_CR1_CEN;                         // Wlaczenie licznika TIM8
 }
+
+
+  
+void TIM8_UP_IRQHandler (void){
+     if(((TIM8->SR) & TIM_SR_UIF) == TIM_SR_UIF){      
+      DisplayShow();      
+      TIM8->SR &= ~TIM_SR_UIF;
+   }
+}
+   
+

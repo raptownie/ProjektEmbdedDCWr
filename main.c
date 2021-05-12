@@ -1,10 +1,10 @@
 #include "headers/main.h"
 
  int main (void){
-    
-SystemInit();   
+   
+   SystemInit();   
   
-while(1){      
+   while(1){      
       MainStatePerform();
       ButtonStatePerform();            
    }

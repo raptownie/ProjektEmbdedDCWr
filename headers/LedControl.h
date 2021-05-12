@@ -10,9 +10,6 @@
 #include "Typedef.h"
 #include "UserSystemInit.h"
 
-
-
-
 void DisplayShow (void);
 void BlinkLed(void);
 void AllLedsOff(void);

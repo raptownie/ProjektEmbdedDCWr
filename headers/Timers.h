@@ -25,7 +25,7 @@ void TIM6_config(void);
 void TIM6_DAC_IRQHandler(void);
 void TurnOnTimers (void);
 void TIM8_config(void);
-void TIM8_CC_IRQHandler(void);
+void TIM8_UP_IRQHandler (void);
 
 extern Mode_t ModeSelect;
 extern DataToSendUART_t GyroskopXYZvalues;

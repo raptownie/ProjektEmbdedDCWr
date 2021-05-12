@@ -12,6 +12,4 @@
 void EXTI0_IRQHandler(void);
 void GPIO_Init(void);
 
-
-
 #endif

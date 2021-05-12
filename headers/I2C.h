@@ -17,7 +17,4 @@ void Accelero_LSM303DLHC_XYZ_Read_Calculate(void);
 
 extern DataToSendUART_t AcceleroXYZvalues;
 
-
-
-
 #endif

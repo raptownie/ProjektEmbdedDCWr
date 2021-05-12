@@ -10,7 +10,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 #include "GPIOInit.h"
 #include "UserSystemInit.h"
 #include "Timers.h"

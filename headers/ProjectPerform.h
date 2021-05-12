@@ -12,8 +12,6 @@
 #include "Config.h"
 #include "UserSystemInit.h"
 
-
-
 void MainStatePerform(void);
 void ButtonStatePerform(void);
 bool CheckButtonPressed(void);
