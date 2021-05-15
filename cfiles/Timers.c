@@ -44,7 +44,7 @@ void TIM1_config(void){
 
 void TIM1_UP_TIM16_IRQHandler(void){   
    if(((TIM1->SR) & TIM_SR_UIF) == TIM_SR_UIF){      
-      BlinkLed();      
+      BlinkLed(LedStructName);      
       DMAHandleUART();      
       TIM1->SR &= ~TIM_SR_UIF;                        // Czyszczenie flagi glownego przerwania TIM1 
    } 
@@ -72,7 +72,7 @@ void TIM6_DAC_IRQHandler(void){
    if(((TIM6->SR) & TIM_SR_UIF) == TIM_SR_UIF){
       if (CheckMainState(GyroState)) 
          Gyroskop_L3GD20_XYZ_Read_Calculate();
-      else 
+      else if (CheckMainState(AcceleroState))
          Accelero_LSM303DLHC_XYZ_Read_Calculate();
       TIM6->SR &= ~TIM_SR_UIF;
    }
@@ -100,7 +100,7 @@ void TurnOnTimers (void){
   
 void TIM8_UP_IRQHandler (void){
      if(((TIM8->SR) & TIM_SR_UIF) == TIM_SR_UIF){      
-      DisplayShow();      
+      DisplayShow(LedStructName);      
       TIM8->SR &= ~TIM_SR_UIF;
    }
 }

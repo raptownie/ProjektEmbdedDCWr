@@ -5,6 +5,10 @@ static const MainState_t StateAfterTurnOnDevice = AfterWakeUpState; // do not ch
 static MainState_t MainState = StateAfterTurnOnDevice;
 static ButtonState_t ButtonState = Unpressed;
 
+static bool TurnOnLedSequenceStartFlag = false;
+static bool TurnOffLedSequenceStartFlag = false;
+bool *pTurnOnLedSequenceStartFlag = &TurnOnLedSequenceStartFlag;
+bool *pTurnOffLedSequenceStartFlag = &TurnOffLedSequenceStartFlag;
 
 void MainStatePerform(void){
    switch (MainState){
@@ -17,16 +21,20 @@ void MainStatePerform(void){
          if (CheckButtonPressed()) ChangeMainState(GyroState);
          break;
       case AfterWakeUpState:
-         if (ButtonIsPressedBy_ms(TimeToTurnOnOffDevice_ms)) {
-            ClearStandbyFlag();
-            DeviceAfterWakeUpLedShow();
-            ChangeMainState(GyroState);
-         }else if(ButtonIsUnpressed()) GoSleep();
+         if (ButtonIsPressedBy_ms(TimeToTurnOnOffDevice_ms) || TurnOnLedSequenceStartFlag) {            
+            TurnOnLedSequenceStartFlag = true;
+            if (*pTurnOnLedSequenceFinishFlag){
+               ClearStandbyFlag();
+               AllLedsOff(LedStructName);
+               TurnOnLedSequenceStartFlag = false;
+               ChangeMainState(GyroState);
+            }                    
+         }else if (ButtonIsUnpressed())GoSleep();
          break;
       case GoStandbyState:
-         if ((ButtonIsPressedBy_ms(TimeToTurnOnOffDevice_ms))){
-            GoStandbyModeDeviceLedShow();
-            GoSleep();
+         if ((ButtonIsPressedBy_ms(TimeToTurnOnOffDevice_ms)) || TurnOffLedSequenceStartFlag){
+            TurnOffLedSequenceStartFlag = true;
+            if(*pTurnOffLedSequenceFinishFlag) GoSleep(); 
          }
          break;
    }
@@ -70,8 +78,8 @@ bool CheckMainState (MainState_t MainStateToCheck){
    return false;
 }
 
-bool ButtonIsPressedBy_ms (uint32_t time_ms){
-   if (time_ms < (HowLongButtonIsPressed*100)) return true;
+bool ButtonIsPressedBy_ms (uint32_t time){
+   if (time < (HowLongButtonIsPressed*100)) return true;
    return false;
 }
 
@@ -83,3 +91,4 @@ bool ButtonIsUnpressed (void){
 void ClearStandbyFlag(void){
    PWR->CR |= PWR_CR_CSBF;
 }
+

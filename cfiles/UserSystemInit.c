@@ -1,6 +1,6 @@
 #include "../headers/UserSystemInit.h"
 
-static volatile uint32_t timer_ms;
+volatile uint32_t timer_ms = 0;
 
 void ClockConfig_HSE_with_PLL(void){
 
@@ -39,14 +39,11 @@ void ClockConfig_HSE_with_PLL(void){
    
 }
 
-void SysTick_Handler(void){     
-   if (timer_ms) timer_ms--;
+void SysTick_Handler(void){
+   if (timer_ms != 4294967295) timer_ms++;
+   else timer_ms = 0;
 }
 
-void delay_ms(uint32_t time){
-   timer_ms=time;
-   while(timer_ms);
-}
 
 void GoSleep (void){   
    StandbyConfig();       
@@ -86,7 +83,7 @@ void SystemSetup (void) {
    UART4_Init_with_DMA_TIM1();
     
    /** ShowDisplay Init ***/
-   InitStruct_LedsStatus_tab();
+   InitStruct_LedsStatus_tab(tLedStatus);
    TIM8_config();
    
    /*** TurnOn All Timers ***/

@@ -121,9 +121,9 @@ void Send_Gyro_Date_XYZ_UART(void){
 void Send_Data_Gyro_Accelero_XYZ_UART(void){
    if (CheckMainState(AcceleroState)){      
       PrepareDataToSendUART(AcceleroXYZvalues);
-   }else{      
+   }else {      
       PrepareDataToSendUART(GyroskopXYZvalues);
-   } 
+   }
 }
 
 static void PrepareDataToSendUART(DataToSendUART_t DataToSend){ 

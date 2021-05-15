@@ -71,14 +71,15 @@ void EXTI0_IRQHandler(void){
          button_pressed++;
          button_unpressed = 0;
          if (button_pressed > debounce_value && wait_for_next_press == 0){
-            if(!CheckButtonState(ButtonPressedLongerToGoStandby)) ChangeButtonState(JustPressed);
+            if(!CheckButtonState(ButtonPressedLongerToGoStandby)) 
+               ChangeButtonState(JustPressed);
             wait_for_next_press = 1;
-            //EXTI->PR |= EXTI_PR_PR0;
+           // EXTI->PR |= EXTI_PR_PR0;
          }             
       } else{
          button_unpressed++;
          button_pressed = 0;
-         if (button_unpressed>debounce_value && wait_for_next_press == 1) {         
+         if (button_unpressed>debounce_value) {         
             wait_for_next_press =0;
             EXTI->PR |= EXTI_PR_PR0;
          }

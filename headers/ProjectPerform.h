@@ -11,6 +11,7 @@
 #include "Typedef.h"
 #include "Config.h"
 #include "UserSystemInit.h"
+#include "LedControl.h"
 
 void MainStatePerform(void);
 void ButtonStatePerform(void);
@@ -24,5 +25,8 @@ void ClearStandbyFlag(void);
 bool ButtonIsUnpressed (void);
 
 extern uint32_t HowLongButtonIsPressed;
+extern volatile uint32_t timer_ms;
+extern bool *pTurnOnLedSequenceFinishFlag;
+extern bool *pTurnOffLedSequenceFinishFlag;
 
 #endif

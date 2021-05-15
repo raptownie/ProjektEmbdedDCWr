@@ -27,22 +27,7 @@ Project File Date:  05/09/2021
 <h2>Output:</h2>
 *** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling UART.c...
-compiling GPIOInit.c...
-compiling I2C.c...
-compiling LedControl.c...
-compiling main.c...
-compiling UserSystemInit.c...
-cfiles/SPI.c(75): warning: unused variable 'rd' [-Wunused-variable]
-   volatile uint8_t rd = (uint8_t) SPI1->DR;     // za pierwszym razem odczytuje FF, wiec dodalem odczyt przed wlasciwym odczytem zeby zdjac z kolejki FIFO  
-                    ^
-1 warning generated.
-compiling SPI.c...
-compiling Timers.c...
-compiling ProjectPerform.c...
-linking...
-Program Size: Code=3112 RO-data=628 RW-data=4 ZI-data=1816  
-".\Objects\ProjektPracaDCWr.axf" - 0 Error(s), 1 Warning(s).
+".\Objects\ProjektPracaDCWr.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -69,10 +54,10 @@ Package Vendor: Keil
 
    * Component: Keil.Standalone::Device:Startup:1.0.0
       Source file:   Drivers\CMSIS\Device\ST\STM32F3xx\Source\Templates\system_stm32f3xx.c
+      Source file:   MDK\Device\Source\ARM\STM32F3xx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F3xx\Source\Templates\arm\startup_stm32f303xc.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h
-      Source file:   MDK\Device\Source\ARM\STM32F3xx_OPT.s
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

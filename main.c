@@ -2,7 +2,7 @@
 
  int main (void){
    
-   SystemInit();   
+   SystemSetup();   
   
    while(1){      
       MainStatePerform();
