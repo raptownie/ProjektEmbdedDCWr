@@ -43,6 +43,10 @@
 #define Accelero_CTRL_REG1_A_Value_ToWrite 0x9F
 #define Accelero_CTRL_REG4_A_Value_ToWrite 0x0
 
+//MainStatePerform ButtonStatePerform
+#define DebounceValue 10
+#define MainStateAfterWakeUp GyroState
+
 //LedControl
 
 #define LedStructName      tLedStatus

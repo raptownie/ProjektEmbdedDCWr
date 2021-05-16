@@ -51,14 +51,17 @@ static void GPIOA_BUTTON_Init(void){
    //Set nopullup-nopulldown (PUPDR 00)
    GPIOA->PUPDR &= ~GPIO_PUPDR_PUPDR0_0 | ~GPIO_PUPDR_PUPDR0_1;
 
+   
    /*** Interrupt config ***/
+   /*
    SYSCFG->EXTICR[1] |= SYSCFG_EXTICR1_EXTI0_PA;   //podlaczenie PA0 do lini EXTI0
    EXTI->IMR |= EXTI_IMR_MR0;                      // IRM - interrupt mask register - wlaczenie maskowania dla lini EXTI0 
    EXTI->RTSR |= EXTI_RTSR_RT0;                    // RTSR - Raising Trigger Selection register
    NVIC_SetPriority(EXTI0_IRQn, 7);
    NVIC_EnableIRQ(EXTI0_IRQn);
+   */
 }
-
+/*
 void EXTI0_IRQHandler(void){
    static uint16_t button_pressed = 0;
    static uint16_t button_unpressed = 0;
@@ -71,8 +74,8 @@ void EXTI0_IRQHandler(void){
          button_pressed++;
          button_unpressed = 0;
          if (button_pressed > debounce_value && wait_for_next_press == 0){
-            if(!CheckButtonState(ButtonPressedLongerToGoStandby)) 
-               ChangeButtonState(JustPressed);
+            if(!CheckButtonState(ButtonIsPressedLongerGoStandbyOrWakeupState)) 
+               ChangeButtonState(Pressed);
             wait_for_next_press = 1;
            // EXTI->PR |= EXTI_PR_PR0;
          }             
@@ -86,6 +89,7 @@ void EXTI0_IRQHandler(void){
       }  
    }
 }
+*/
 
 void GPIO_Init(void){
    GPIOE_LED_Init();

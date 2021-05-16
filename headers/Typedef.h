@@ -57,9 +57,9 @@ typedef enum {
 } MainState_t;
 
 typedef enum {
-   JustPressed = 0,
+   Pressed = 0,
    Unpressed = 1,
-   ButtonPressedLongerToGoStandby = 3
+   ButtonIsPressedLongerGoStandbyOrWakeupState = 3
 } ButtonState_t;
 
 

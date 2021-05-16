@@ -132,7 +132,7 @@ static void PrepareDataToSendUART(DataToSendUART_t DataToSend){
    if(CheckMainState(AcceleroState)) 
       SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J Mode Accelero \n\r X = %d    \n\r Y = %d    \n\r Z = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
    else if (CheckMainState (GyroState))
-      SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J Mode Magneto \n\r X = %d    \n\r Y = %d    \n\r Z = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
+      SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J Mode Gyro \n\r X = %d    \n\r Y = %d    \n\r Z = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
    else if (CheckMainState(AfterWakeUpState))
       SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J The Device wakes up\r");
    else if (CheckMainState(GoStandbyState)) 
