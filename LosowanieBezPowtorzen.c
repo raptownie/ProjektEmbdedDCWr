@@ -72,3 +72,35 @@ int PierwszaLiczbaKtorejBrakuje (int *tab, size_t rozmiar){
 	return -1;
 }
 
+/*
+Zbiór liczb z którego będziemy losowac:
+tab[0] = 0
+tab[1] = 1
+tab[2] = 2
+tab[3] = 3
+tab[4] = 4
+tab[5] = 5
+tab[6] = 6
+tab[7] = 7
+tab[8] = 8
+tab[9] = 9
+tab[10] = 10
+
+Tablica wynikowa:
+tab[0] = 7
+tab[1] = 9
+tab[2] = 5
+tab[3] = 4
+tab[4] = 8
+tab[5] = 1
+tab[6] = 3
+tab[7] = 10
+tab[8] = 2
+tab[9] = 0
+Liczby ktorej brakuje to : 6
+
+
+
+
+
+*/
