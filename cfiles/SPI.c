@@ -42,13 +42,13 @@ void SPI_Config_for_Gyroskop(void){
 
    GPIOE->ODR |= GPIO_ODR_3;        // Slave Selector SS disable
    
-   L3GD20_Init();
-   TIM6_config();
+   SPI_L3GD20_Init();
+   Timers_TIM6_config();
 }
 
 
 //ta funkcja jeszcze nie dziala
-void Write_SPI(uint8_t reg, uint8_t data){
+void SPI_Write(uint8_t reg, uint8_t data){
    
    GPIOE->ODR &= ~GPIO_ODR_3;  
    SPI1->CR1 |= SPI_CR1_SPE;  
@@ -62,7 +62,7 @@ void Write_SPI(uint8_t reg, uint8_t data){
    GPIOE->ODR |= GPIO_ODR_3;        // Slave Selector SS 
 }
 
-uint8_t Read_SPI(uint8_t reg){
+uint8_t SPI_Read(uint8_t reg){
    GPIOE->ODR &= ~GPIO_ODR_3;        // Slave Selector SS 
    SPI1->CR1 |= SPI_CR1_SPE;           // wlaczamy SPI
    while (SPI1->SR & SPI_SR_BSY);      // czy SPI zajety?
@@ -80,32 +80,28 @@ uint8_t Read_SPI(uint8_t reg){
    return r;
 }
 
-void L3GD20_Init(void){
+void SPI_L3GD20_Init(void){
    
-   Read_SPI(0x0F);          
+   SPI_Read(0x0F);          
    // axis xyz on, power on
-   Write_SPI(0x20, 0xF);      
-   Read_SPI(0x20);   
-   Write_SPI(0x23, 0xF0);    // output registers not updated until MSb and LSb readinge; set 500 DPS
+   SPI_Write(0x20, 0xF);      
+   SPI_Read(0x20);   
+   SPI_Write(0x23, 0xF0);    // output registers not updated until MSb and LSb readinge; set 500 DPS
 
 }
 
-void Gyroskop_L3GD20_XYZ_Read_Calculate(void){
+void SPI_Gyroskop_L3GD20_XYZ_Read_Calculate(void){
      
-   SPI_L3GD2_YL = (int8_t)Read_SPI(L3GD20_Reg_YL);   
-   SPI_L3GD2_YH = (int8_t)Read_SPI(L3GD20_Reg_YH);   
+   SPI_L3GD2_YL = (int8_t)SPI_Read(L3GD20_Reg_YL);   
+   SPI_L3GD2_YH = (int8_t)SPI_Read(L3GD20_Reg_YH);   
    GyroskopXYZvalues.values.Y_value = (int16_t)(SPI_L3GD2_YL |(SPI_L3GD2_YH << 8));
 
-   SPI_L3GD2_ZL = (int8_t)Read_SPI(L3GD20_Reg_ZL);  
-   SPI_L3GD2_ZH = (int8_t)Read_SPI(L3GD20_Reg_ZH);   
+   SPI_L3GD2_ZL = (int8_t)SPI_Read(L3GD20_Reg_ZL);  
+   SPI_L3GD2_ZH = (int8_t)SPI_Read(L3GD20_Reg_ZH);   
    GyroskopXYZvalues.values.Z_value = (int16_t)(SPI_L3GD2_ZL |(SPI_L3GD2_ZH <<8));
 
-   SPI_L3GD2_XL = (int8_t)Read_SPI(L3GD20_Reg_XL); 
-   SPI_L3GD2_XH = (int8_t)Read_SPI(L3GD20_Reg_XH);      
+   SPI_L3GD2_XL = (int8_t)SPI_Read(L3GD20_Reg_XL); 
+   SPI_L3GD2_XH = (int8_t)SPI_Read(L3GD20_Reg_XH);      
    GyroskopXYZvalues.values.X_value = (int16_t)(SPI_L3GD2_XL | (SPI_L3GD2_XH << 8)); 
   
 }
-
-
-
-

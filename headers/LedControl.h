@@ -11,19 +11,20 @@
 #include "Typedef.h"
 #include "UserSystemInit.h"
 
-void DisplayShow (LedStatus_t *);
-void BlinkLed(LedStatus_t *);
-void AllLedsOff(LedStatus_t *);
-void InitStruct_LedsStatus_tab (LedStatus_t *);
-void AllLedsOn(LedStatus_t *);
-void SetLedOn(LedStatus_t *, uint8_t );
-void SetLedOff(LedStatus_t *, uint8_t );
-void SetLedBlinkOn(LedStatus_t *, uint8_t );
-void SetLedBlinkOff(LedStatus_t *, uint8_t  );
-void SetAllLedsBlinkOn(LedStatus_t *);
-void SetAllLedsBlinkOff(LedStatus_t *);
+void LedControl_DisplayShow (LedStatus_t *);
+void LedControl_BlinkLed(LedStatus_t *);
+void LedControl_AllLedsOff(LedStatus_t *);
+void LedControl_InitStruct_LedsStatus_tab (LedStatus_t *);
+void LedControl_AllLedsOn(LedStatus_t *);
+void LedControl_SetLedOn(LedStatus_t *, uint8_t );
+void LedControl_SetLedOff(LedStatus_t *, uint8_t );
+void LedControl_SetLedBlinkOn(LedStatus_t *, uint8_t );
+void LedControl_SetLedBlinkOff(LedStatus_t *, uint8_t  );
+void LedControl_SetAllLedsBlinkOn(LedStatus_t *);
+void LedControl_SetAllLedsBlinkOff(LedStatus_t *);
+bool LedControl_SequenceLedGoToStandbyDone (void);
+bool LedControl_SequenceLedAfterWakeUpDone (void);
 
 extern volatile uint32_t timer_ms;
-extern bool *pTurnOnLedSequenceStartFlag;
-extern bool *pTurnOffLedSequenceStartFlag;
+
 #endif

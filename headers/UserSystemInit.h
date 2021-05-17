@@ -10,10 +10,8 @@
 #include "GPIOInit.h"
 #include <stdbool.h>
 
-void ClockConfig_HSE_with_PLL(void);
 void SysTick_Handler(void);
-void StandbyConfig(void);
 void GoSleep (void);
-void SystemSetup (void);
+void UserSystemInit_SystemSetup (void);
 
 #endif

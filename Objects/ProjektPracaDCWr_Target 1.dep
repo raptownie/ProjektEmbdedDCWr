@@ -1,7 +1,7 @@
 Dependencies for Project 'ProjektPracaDCWr', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6150000::V6.15::ARMCLANG
-F (.\main.c)(0x60A14903)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/main.o -MD)
-I (headers\main.h)(0x609BFB78)
+F (.\main.c)(0x60A2A130)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/main.o -MD)
+I (headers\main.h)(0x60A2A0F2)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -16,19 +16,20 @@ I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x5F37331E)
-I (headers\GPIOInit.h)(0x609BFB78)
-I (headers\UserSystemInit.h)(0x609FF8C7)
-I (headers\Timers.h)(0x609BFAF9)
+I (headers\GPIOInit.h)(0x60A2A0F2)
+I (headers\UserSystemInit.h)(0x60A28E33)
+I (headers\Timers.h)(0x60A2A0F2)
 I (headers\Config.h)(0x60A135D1)
-I (headers\UART.h)(0x609BFB78)
-I (headers\Typedef.h)(0x60A10B8A)
+I (headers\UART.h)(0x60A28E96)
+I (headers\Typedef.h)(0x60A28022)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (headers\SPI.h)(0x609BFB78)
-I (headers\I2C.h)(0x609BFB78)
-I (headers\LedControl.h)(0x609EE8F2)
-I (headers\ProjectPerform.h)(0x60A1362B)
-F (.\cfiles\UserSystemInit.c)(0x609FF8C7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/usersysteminit.o -MD)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
+I (headers\SPI.h)(0x60A29969)
+I (headers\I2C.h)(0x60A28F6C)
+I (headers\LedControl.h)(0x60A27F99)
+I (headers\MainPerform.h)(0x60A2A28B)
+I (headers\ButtonPerform.h)(0x60A29EF2)
+F (.\cfiles\UserSystemInit.c)(0x60A29A9C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/usersysteminit.o -MD)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -40,20 +41,21 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
 F (.\cfiles\GPIOInit.c)(0x60A10F91)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/gpioinit.o -MD)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -65,20 +67,21 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-F (.\cfiles\Timers.c)(0x60A13641)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/timers.o -MD)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
+F (.\cfiles\Timers.c)(0x60A2A14F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/timers.o -MD)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -90,20 +93,21 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-F (.\cfiles\UART.c)(0x60A127FF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/uart.o -MD)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
+F (.\cfiles\UART.c)(0x60A2A16C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/uart.o -MD)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -115,20 +119,21 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-F (.\cfiles\SPI.c)(0x609267B2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/spi.o -MD)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+F (.\cfiles\SPI.c)(0x60A2995F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/spi.o -MD)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -141,19 +146,20 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-F (.\cfiles\I2C.c)(0x6092D6F8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/i2c.o -MD)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
+F (.\cfiles\I2C.c)(0x60A28F6B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/i2c.o -MD)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -165,45 +171,21 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
-F (.\cfiles\LedControl.c)(0x609FFED4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/ledcontrol.o -MD)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F373318)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F3392)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E836932)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F3392)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
-I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\Config.h)(0x60A135D1)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
-I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
-F (.\cfiles\ProjectPerform.c)(0x60A159A0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/projectperform.o -MD)
-I (cfiles\..\headers\ProjectPerform.h)(0x60A1362B)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
+F (.\cfiles\LedControl.c)(0x60A2A17D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/ledcontrol.o -MD)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
@@ -216,28 +198,72 @@ I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
-I (cfiles\..\headers\Typedef.h)(0x60A10B8A)
 I (cfiles\..\headers\Config.h)(0x60A135D1)
-I (cfiles\..\headers\UserSystemInit.h)(0x609FF8C7)
-I (cfiles\..\headers\Timers.h)(0x609BFAF9)
-I (cfiles\..\headers\UART.h)(0x609BFB78)
-I (cfiles\..\headers\SPI.h)(0x609BFB78)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
-I (cfiles\..\headers\I2C.h)(0x609BFB78)
-I (cfiles\..\headers\LedControl.h)(0x609EE8F2)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
-I (cfiles\..\headers\GPIOInit.h)(0x609BFB78)
-F (.\headers\UserSystemInit.h)(0x609FF8C7)()
-F (.\headers\GPIOInit.h)(0x609BFB78)()
-F (.\headers\Timers.h)(0x609BFAF9)()
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
+F (.\cfiles\ButtonPerform.c)(0x60A29EEF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/buttonperform.o -MD)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F373318)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F3392)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E836932)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F3392)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
+I (cfiles\..\headers\Config.h)(0x60A135D1)
+F (.\cfiles\MainPerform.c)(0x60A2A124)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/mainperform.o -MD)
+I (cfiles\..\headers\MainPerform.h)(0x60A2A28B)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x594A8B6E)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F3392)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5F373318)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F3392)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E836932)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F3392)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5EE189B2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5F26E9A8)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
+I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x594A8B6E)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5F37331C)
+I (cfiles\..\headers\ButtonPerform.h)(0x60A29EF2)
+I (cfiles\..\headers\Typedef.h)(0x60A28022)
+I (cfiles\..\headers\Config.h)(0x60A135D1)
+I (cfiles\..\headers\UserSystemInit.h)(0x60A28E33)
+I (cfiles\..\headers\Timers.h)(0x60A2A0F2)
+I (cfiles\..\headers\UART.h)(0x60A28E96)
+I (cfiles\..\headers\SPI.h)(0x60A29969)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5F373324)
+I (cfiles\..\headers\I2C.h)(0x60A28F6C)
+I (cfiles\..\headers\LedControl.h)(0x60A27F99)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5F373314)
+I (cfiles\..\headers\GPIOInit.h)(0x60A2A0F2)
+F (.\headers\UserSystemInit.h)(0x60A28E33)()
+F (.\headers\GPIOInit.h)(0x60A2A0F2)()
+F (.\headers\Timers.h)(0x60A2A0F2)()
 F (.\headers\Config.h)(0x60A135D1)()
-F (.\headers\UART.h)(0x609BFB78)()
-F (.\headers\SPI.h)(0x609BFB78)()
-F (.\headers\Typedef.h)(0x60A10B8A)()
-F (.\headers\I2C.h)(0x609BFB78)()
-F (.\headers\main.h)(0x609BFB78)()
-F (.\headers\LedControl.h)(0x609EE8F2)()
-F (.\headers\ProjectPerform.h)(0x60A1362B)()
+F (.\headers\UART.h)(0x60A28E96)()
+F (.\headers\SPI.h)(0x60A29969)()
+F (.\headers\Typedef.h)(0x60A28022)()
+F (.\headers\I2C.h)(0x60A28F6C)()
+F (.\headers\main.h)(0x60A2A0F2)()
+F (.\headers\LedControl.h)(0x60A27F99)()
+F (.\headers\ButtonPerform.h)(0x60A29EF2)()
+F (.\headers\MainPerform.h)(0x60A2A28B)()
 F (RTE\Device\STM32F303VCTx\startup_stm32f303xc.s)(0x6085C80C)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 533" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F303xC SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f303xc.o)
 F (RTE\Device\STM32F303VCTx\system_stm32f3xx.c)(0x6085C80C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/Kamil/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include-IC:/Users/Kamil/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.1.0/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F303xC -D_RTE_-o ./objects/system_stm32f3xx.o -MD)
 I (C:\Users\Kamil\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x594A8B6E)

@@ -424,9 +424,14 @@
               <FilePath>.\cfiles\LedControl.c</FilePath>
             </File>
             <File>
-              <FileName>ProjectPerform.c</FileName>
+              <FileName>ButtonPerform.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\cfiles\ProjectPerform.c</FilePath>
+              <FilePath>.\cfiles\ButtonPerform.c</FilePath>
+            </File>
+            <File>
+              <FileName>MainPerform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cfiles\MainPerform.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -484,9 +489,14 @@
               <FilePath>.\headers\LedControl.h</FilePath>
             </File>
             <File>
-              <FileName>ProjectPerform.h</FileName>
+              <FileName>ButtonPerform.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\headers\ProjectPerform.h</FilePath>
+              <FilePath>.\headers\ButtonPerform.h</FilePath>
+            </File>
+            <File>
+              <FileName>MainPerform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\headers\MainPerform.h</FilePath>
             </File>
           </Files>
         </Group>

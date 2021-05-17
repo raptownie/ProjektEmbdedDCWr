@@ -2,12 +2,12 @@
 
  int main (void){
    
-   SystemSetup();   
+   UserSystemInit_SystemSetup();   
   
    while(1){  
         
-      MainStatePerform();
-      ButtonStatePerform();   
+      MainPerform_MainStatePerform();
+      ButtonPerform_ButtonStatePerform();   
    }
 }
  

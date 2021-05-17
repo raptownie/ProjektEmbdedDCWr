@@ -8,18 +8,13 @@
 
 #include <stdbool.h>
 
+#include "ButtonPerform.h"
 #include "Typedef.h"
 #include "Config.h"
 #include "UserSystemInit.h"
 #include "LedControl.h"
 
-void MainStatePerform(void);
-void ButtonStatePerform(void);
-bool CheckMainState (MainState_t );
-
-extern uint32_t HowLongButtonIsPressed;
-extern volatile uint32_t timer_ms;
-extern bool *pTurnOnLedSequenceFinishFlag;
-extern bool *pTurnOffLedSequenceFinishFlag;
+void MainPerform_MainStatePerform(void);
+bool MainPerform_CheckMainState (MainState_t );
 
 #endif

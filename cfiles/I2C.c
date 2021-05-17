@@ -131,7 +131,7 @@ static void I2C_LSM303DLHC_Config_Init (void){
 }
 
 
-void Accelero_LSM303DLHC_XYZ_Read_Calculate(void){
+void I2C_Accelero_LSM303DLHC_XYZ_Read_Calculate(void){
 
    I2C_LSM303DLHC_A_XH = (int8_t)I2C_Read(Accelerometer_Adress, Accelero_OUT_X_H_A_Adress, 1);  
    AcceleroXYZvalues.values.Z_value= (int16_t)(I2C_LSM303DLHC_A_XH << 8);        

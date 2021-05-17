@@ -13,18 +13,18 @@
 #include "Typedef.h"
 #include "I2C.h"
 #include "LedControl.h"
-#include "ProjectPerform.h"
+#include "MainPerform.h"
 #include <string.h>
 
-void TIM7_config(void);
+void Timers_TIM7_config(void);
 void TIM7_IRQHandler(void);
-void TIM1_config(void);
+void Timers_TIM1_config(void);
 void TIM1_UP_TIM16_IRQHandler(void);
 void TIM1_CC_IRQHandler(void);
-void TIM6_config(void);
+void Timers_TIM6_config(void);
 void TIM6_DAC_IRQHandler(void);
-void TurnOnTimers (void);
-void TIM8_config(void);
+void Timers_TurnOnTimers (void);
+void Timers_TIM8_config(void);
 void TIM8_UP_IRQHandler (void);
 
 extern Mode_t ModeSelect;

@@ -12,10 +12,8 @@ static int TurnOnLedSequence[] = TurnOnLedSequenceDate;
 
 static bool TurnOnLedSequenceFinishFlag = false;
 static bool TurnOffLedSequenceFinishFlag = false;
-bool *pTurnOnLedSequenceFinishFlag = &TurnOnLedSequenceFinishFlag;
-bool *pTurnOffLedSequenceFinishFlag = &TurnOffLedSequenceFinishFlag;
 
-void InitStruct_LedsStatus_tab (LedStatus_t *LedStruct){
+void LedControl_InitStruct_LedsStatus_tab (LedStatus_t *LedStruct){
    LedStruct[0].Pin_ODR = LD3_ODR_BIT;
    LedStruct[1].Pin_ODR = LD4_ODR_BIT;
    LedStruct[2].Pin_ODR = LD5_ODR_BIT;
@@ -24,10 +22,10 @@ void InitStruct_LedsStatus_tab (LedStatus_t *LedStruct){
    LedStruct[5].Pin_ODR = LD8_ODR_BIT;
    LedStruct[6].Pin_ODR = LD9_ODR_BIT;
    LedStruct[7].Pin_ODR = LD10_ODR_BIT;
-   AllLedsOff(LedStruct);   
+   LedControl_AllLedsOff(LedStruct);   
 }
 
-void DisplayShow (LedStatus_t *LedStruct){
+void LedControl_DisplayShow (LedStatus_t *LedStruct){
    SequenceLedAfterWakeUp(LedStruct);
    SequenceLedGoToStandby(LedStruct);
    for (int i=0; i<NumberOfLeds; i++){      
@@ -39,28 +37,28 @@ void DisplayShow (LedStatus_t *LedStruct){
    }   
 }
 
-void AllLedsOff(LedStatus_t *LedStruct){
+void LedControl_AllLedsOff(LedStatus_t *LedStruct){
    for (int i=0; i<NumberOfLeds; i++){
       LedStruct[i].OnOffStatus = Off;
       LedStruct[i].blink = false;
    }
 }
 
-void AllLedsOn(LedStatus_t *LedStruct){
+void LedControl_AllLedsOn(LedStatus_t *LedStruct){
    for (int i=0; i<NumberOfLeds; i++){
       LedStruct[i].OnOffStatus = On;
    }   
 }
 
-void SetLedOn(LedStatus_t *LedStruct, uint8_t LedToTurnOn){
+void LedControl_SetLedOn(LedStatus_t *LedStruct, uint8_t LedToTurnOn){
   LedStruct[LedToTurnOn].OnOffStatus = On;      
 }
 
-void SetLedOff(LedStatus_t *LedStruct, uint8_t LedToTurnOff){
+void LedControl_SetLedOff(LedStatus_t *LedStruct, uint8_t LedToTurnOff){
    LedStruct[LedToTurnOff].OnOffStatus = Off;   
 }
 
-void BlinkLed(LedStatus_t *LedStruct){
+void LedControl_BlinkLed(LedStatus_t *LedStruct){
    static uint8_t EvenOddCount = 0;
    if (EvenOddCount++%2){
       for (int i=0; i<NumberOfLeds; i++){
@@ -73,21 +71,21 @@ void BlinkLed(LedStatus_t *LedStruct){
    }
 }
 
-void SetLedBlinkOn(LedStatus_t *LedStruct, uint8_t LedToBlinkOn ){
+void LedControl_SetLedBlinkOn(LedStatus_t *LedStruct, uint8_t LedToBlinkOn ){
    LedStruct[LedToBlinkOn].blink = true;   
 }
 
-void SetLedBlinkOff(LedStatus_t *LedStruct, uint8_t LedToBlinkOff){
+void LedControl_SetLedBlinkOff(LedStatus_t *LedStruct, uint8_t LedToBlinkOff){
    LedStruct[LedToBlinkOff].blink = false;
 }
 
-void SetAllLedsBlinkOn(LedStatus_t *LedStruct){
+void LedControl_SetAllLedsBlinkOn(LedStatus_t *LedStruct){
    for (int i=0; i<NumberOfLeds; i++){
       LedStruct[i].blink=true;
    } 
 }
 
-void SetAllLedsBlinkOff(LedStatus_t *LedStruct){
+void LedControl_SetAllLedsBlinkOff(LedStatus_t *LedStruct){
    for (int i=0; i<NumberOfLeds; i++){
       LedStruct[i].blink=false;
    } 
@@ -107,10 +105,10 @@ static void SequenceLedAfterWakeUp (LedStatus_t *LedStruct){
    static uint8_t TurnOnOffIncreament = 0;      
    static bool firstRun = true;
    
-   if (CheckMainState(AfterWakeUpState) && *pTurnOnLedSequenceStartFlag){         
+   if (MainPerform_CheckMainState(LedAnimationAfterWakeUpState)){         
       if (firstRun){
          firstRun = false;
-         AllLedsOff(LedStruct);
+         LedControl_AllLedsOff(LedStruct);
       }
       if ((timer_ms - SaveCurrentTimeTurnOnOffSequence) >= TurnOnOffLedSequenceDelay){
          LedStruct[TurnOnLedSequence[TurnOnOffIncreament++]].OnOffStatus = On;
@@ -119,6 +117,7 @@ static void SequenceLedAfterWakeUp (LedStatus_t *LedStruct){
             TurnOnOffIncreament = 0;
             SaveCurrentTimeTurnOnOffSequence = 0;
             TurnOnLedSequenceFinishFlag = true;
+            LedControl_AllLedsOff(LedStruct);
          }
       }    
    }
@@ -130,9 +129,9 @@ static void SequenceLedGoToStandby (LedStatus_t *LedStruct){
    static uint8_t TurnOnOffIncreament = 0;
    static bool firstRun = true;
    
-   if (CheckMainState(GoStandbyState) && *pTurnOffLedSequenceStartFlag){
+   if (MainPerform_CheckMainState(LedAnimationGoStandbyState)){
       if (firstRun) {
-         AllLedsOn(LedStruct);
+         LedControl_AllLedsOn(LedStruct);
          firstRun = false;
       }
       if ((timer_ms - SaveCurrentTimeTurnOnOffSequence) >= TurnOnOffLedSequenceDelay){
@@ -142,8 +141,25 @@ static void SequenceLedGoToStandby (LedStatus_t *LedStruct){
             TurnOnOffIncreament = 0;
             SaveCurrentTimeTurnOnOffSequence = 0;
             TurnOffLedSequenceFinishFlag = true;
+            LedControl_AllLedsOff(LedStruct);
          }
       }
    }
    
+}
+
+bool LedControl_SequenceLedGoToStandbyDone (void){
+   if (TurnOffLedSequenceFinishFlag){
+      TurnOffLedSequenceFinishFlag = false;
+      return true;
+   }
+   return false;
+}
+
+bool LedControl_SequenceLedAfterWakeUpDone (void){
+   if (TurnOnLedSequenceFinishFlag){
+      TurnOnLedSequenceFinishFlag = false;
+      return true;
+   }
+   return false;
 }

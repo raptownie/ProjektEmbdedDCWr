@@ -20,7 +20,7 @@ static char StringToReciveUART[UartMaxDataSizeToRecive];
 
 
 
-void UART4_Init_with_DMA_TIM1(void){
+void UART_UART4_Init_with_DMA_TIM1(void){
     //UART4  - Rx->PC11; Tx->PC10 */
    /******* Konfiguracja GPIO *******/  
    RCC->AHBENR |= RCC_AHBENR_GPIOCEN;                                         // enabled RCC for GPIOC
@@ -53,7 +53,7 @@ void UART4_Init_with_DMA_TIM1(void){
    UART4->CR1 |= USART_CR1_RE;                                                //receiver enabled
    UART4->CR1 |= USART_CR1_UE;                                                // enabled UART4
    
-   TIM1_config();
+   Timers_TIM1_config();
 }
 
 static void UART4_DMA_TIM1_config(void){
@@ -118,8 +118,8 @@ void Send_Gyro_Date_XYZ_UART(void){
    //SizeOfDataToSendUART4=(uint8_t)sizeof(StringToSendUART);
 }
 */
-void Send_Data_Gyro_Accelero_XYZ_UART(void){
-   if (CheckMainState(AcceleroState)){      
+void UART_Send_Data_Gyro_Accelero_XYZ_UART(void){
+   if (MainPerform_CheckMainState(AcceleroState)){      
       PrepareDataToSendUART(AcceleroXYZvalues);
    }else {      
       PrepareDataToSendUART(GyroskopXYZvalues);
@@ -129,17 +129,17 @@ void Send_Data_Gyro_Accelero_XYZ_UART(void){
 static void PrepareDataToSendUART(DataToSendUART_t DataToSend){ 
 //\033[2J - clearscreen
 //\x1b[A  - powrot linijke wyzej
-   if(CheckMainState(AcceleroState)) 
+   if(MainPerform_CheckMainState(AcceleroState)) 
       SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J Mode Accelero \n\r X = %d    \n\r Y = %d    \n\r Z = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
-   else if (CheckMainState (GyroState))
+   else if (MainPerform_CheckMainState (GyroState))
       SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J Mode Gyro \n\r X = %d    \n\r Y = %d    \n\r Z = %d     \x1b[A\r\x1b[A\r\x1b[A\r", DataToSend.values.X_value, DataToSend.values.Y_value, DataToSend.values.Z_value);
-   else if (CheckMainState(AfterWakeUpState))
+   else if (MainPerform_CheckMainState(LedAnimationAfterWakeUpState))
       SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J The Device wakes up\r");
-   else if (CheckMainState(GoStandbyState)) 
+   else if (MainPerform_CheckMainState(LedAnimationGoStandbyState)) 
       SizeOfDataToSendUART4 =(uint8_t) sprintf(StringToSendUART,"\033[2J Turning off the device\r");
 }
 
-void DMAHandleUART (void) {
+void UART_DMAHandleUART (void) {
          // UART4_Tx
       DMA2_Channel5->CCR &= ~DMA_CCR_EN;    
       DMA2_Channel5->CNDTR = SizeOfDataToSendUART4;

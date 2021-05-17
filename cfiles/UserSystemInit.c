@@ -2,7 +2,10 @@
 
 volatile uint32_t timer_ms = 0;
 
-void ClockConfig_HSE_with_PLL(void){
+static void ClockConfig_HSE_with_PLL(void);
+static void StandbyConfig(void);
+
+static void ClockConfig_HSE_with_PLL(void){
 
    RCC->CR |= RCC_CR_HSEBYP;                          
    RCC->CR |= RCC_CR_HSEON;
@@ -51,19 +54,17 @@ void GoSleep (void){
 }
    
    
-void StandbyConfig(void){
+static void StandbyConfig(void){
   /*** Standby Mode ***/
    SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;   
    RCC->APB1ENR |= RCC_APB1ENR_PWREN;
    PWR->CR |= PWR_CR_PDDS;
    PWR->CR |= PWR_CR_CWUF;
    PWR->CSR |= PWR_CSR_EWUP1;
-   TIM7_config();
-   TIM7->CR1 |= TIM_CR1_CEN;                          // Wlaczenie licznika TIM
 }   
 
 
-void SystemSetup (void) {
+void UserSystemInit_SystemSetup (void) {
       /*** Clock Init ***/
    ClockConfig_HSE_with_PLL(); //72MHz
     
@@ -80,13 +81,13 @@ void SystemSetup (void) {
    I2C_LSM303DLHC_Init();
    
    /*** UART Init ***/
-   UART4_Init_with_DMA_TIM1();
+   UART_UART4_Init_with_DMA_TIM1();
     
    /** ShowDisplay Init ***/
-   InitStruct_LedsStatus_tab(tLedStatus);
-   TIM8_config();
+   LedControl_InitStruct_LedsStatus_tab(tLedStatus);
+   Timers_TIM8_config();
    
    /*** TurnOn All Timers ***/
-   TurnOnTimers();   
+   Timers_TurnOnTimers();   
 }
 

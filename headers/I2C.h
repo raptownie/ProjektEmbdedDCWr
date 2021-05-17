@@ -13,7 +13,7 @@
 void I2C_LSM303DLHC_Init(void);
 void I2C_Write(uint8_t , uint8_t , uint8_t , uint8_t );
 uint8_t I2C_Read(uint8_t , uint8_t , uint8_t);
-void Accelero_LSM303DLHC_XYZ_Read_Calculate(void);
+void I2C_Accelero_LSM303DLHC_XYZ_Read_Calculate(void);
 
 extern DataToSendUART_t AcceleroXYZvalues;
 

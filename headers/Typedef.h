@@ -53,13 +53,16 @@ typedef enum {
    GyroState = 0, 
    AcceleroState = 1, 
    GoStandbyState = 2, 
-   AfterWakeUpState = 3
+   AfterWakeUpState = 3,
+   LedAnimationAfterWakeUpState = 4,
+   LedAnimationGoStandbyState = 5,
+   SleepState = 6
 } MainState_t;
 
 typedef enum {
    Pressed = 0,
    Unpressed = 1,
-   ButtonIsPressedLongerGoStandbyOrWakeupState = 3
+   ButtonIsPressedLongerGoStandbyOrWakeUpState = 3
 } ButtonState_t;
 
 
